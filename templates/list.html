@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Все кандидаты</title>
 </head>
 <body>
-
+<h1>Все кандидаты</h1>
+{% for candidate in candidates %}
+<p><a href="/candidates/{{ candidate.id }}/">{{candidate.name}}</a></p>
+{% endfor %}
+<!--<p><a href="/candidate/<x>">Имя кандидата</a></p>-->
+<!--<p><a href="/candidate/<x>">Имя кандидата</a></p>-->
 </body>
 </html>

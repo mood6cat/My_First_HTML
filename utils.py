@@ -1,27 +1,27 @@
 import json
 
 def load_candidates():
-    '''
-    загрузит данные из файла
-    '''
-    # загрузить из json
-    with open('candidates.json', 'r', encoding='utf-8') as file:  # открываем файл на чтение
-        data = json.load(file)  # загружаем из файла данные в словарь data
+    # '''
+    # Р—Р°РіСЂСѓР·РёС‚ РґР°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р°
+    # '''
+    # # Р·Р°РіСЂСѓР·РёС‚СЊ РёР· json
+    with open('candidates.json', 'r', encoding='utf-8') as file:  # РѕС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» РЅР° С‡С‚РµРЅРёРµ
+        data = json.load(file)  # Р·Р°РіСЂСѓР¶Р°РµРј РёР· С„Р°Р№Р»Р° РґР°РЅРЅС‹Рµ РІ СЃР»РѕРІР°СЂСЊ data
         return data
 
 
 def get_all():
-    """
-    покажет всех кандидатов
-    :return: результат load_candidates
-    """
+    # """
+    # РџРѕРєР°Р¶РµС‚ РІСЃРµС… РєР°РЅРґРёРґР°С‚РѕРІ
+    # :return: СЂРµР·СѓР»СЊС‚Р°С‚ load_candidates
+    # """
     return load_candidates()
 
 def get_by_pk(pk):
-    '''
-    :param pk: для того, чтобы вывести кандидата по введенному pk - порядковому номеру
-    :return: вернет кандидата по pk
-    '''
+    # '''
+    # :param pk: РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ РІС‹РІРµСЃС‚Рё РєР°РЅРґРёРґР°С‚Р° РїРѕ РІРІРµРґРµРЅРЅРѕРјСѓ pk - РїРѕСЂСЏРґРєРѕРІРѕРјСѓ РЅРѕРјРµСЂСѓ
+    # :return: РІРµСЂРЅРµС‚ РєР°РЅРґРёРґР°С‚Р° РїРѕ pk
+    # '''
     for candidate in load_candidates():
         if candidate['pk'] == pk:
             return candidate
@@ -29,8 +29,8 @@ def get_by_pk(pk):
 
 # def get_by_skill(skill_name):
 #     '''
-#     :param skill_name: навык
-#     :return:которая вернет кандидатов по навыку
+#     :param skill_name: РЅР°РІС‹Рє
+#     :return:РєРѕС‚РѕСЂР°СЏ РІРµСЂРЅРµС‚ РєР°РЅРґРёРґР°С‚РѕРІ РїРѕ РЅР°РІС‹РєСѓ
 #     '''
 #     # candidates = []
 #     # for candidate in load_candidates():
@@ -46,13 +46,15 @@ def get_by_skill(skill):
         if skill in skills:
             result.append(candidate)
     return result
-print(get_by_skill("python"))
+
 
 def get_by_name(candidate_name):
     result = []
     for candidate in load_candidates():
         names = candidate['name'].lower()
-        if candidate_name in names:
+        if candidate_name.lower() in names:
             result.append(candidate)
-    return result
+        return result
+    else:
+        return
 
