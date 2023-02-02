@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def page_index():
-    candidate = utils.get_all()
-    return render_template("list.html", candidate=candidate)
+    candidates = utils.get_all()
+    return render_template("list.html", candidate=candidates)
 
 
-@app.route('/candidate/<int:pk>')
+@app.route('/candidates/<int:pk>')
 def img_candidate(pk):
     candidate = utils.get_by_pk(pk)
     return render_template('card.html', candidate=candidate)
