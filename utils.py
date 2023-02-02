@@ -25,7 +25,7 @@ def get_by_pk(pk):
     for candidate in load_candidates():
         if candidate['pk'] == pk:
             return candidate
-    return
+    return "Не то"
 
 # def get_by_skill(skill_name):
 #     '''
