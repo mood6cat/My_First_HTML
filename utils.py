@@ -23,21 +23,9 @@ def get_by_pk(pk):
     # :return: вернет кандидата по pk
     # '''
     for candidate in load_candidates():
-        if candidate['pk'] == pk:
+        if candidate['id'] == pk:
             return candidate
-    return "Не то"
-
-# def get_by_skill(skill_name):
-#     '''
-#     :param skill_name: навык
-#     :return:которая вернет кандидатов по навыку
-#     '''
-#     # candidates = []
-#     # for candidate in load_candidates():
-#     #     if skill_name.lower() in candidate['skills'].lower().split(', '):
-#     #         candidates.append(candidate)
-#     #         return candidates
-
+    return "None"
 
 def get_by_skill(skill):
     result = []
@@ -51,10 +39,8 @@ def get_by_skill(skill):
 def get_by_name(candidate_name):
     result = []
     for candidate in load_candidates():
-        names = candidate['name'].lower()
-        if candidate_name.lower() in names:
+        if candidate_name.lower() in candidate['name'].lower():
             result.append(candidate)
-        return result
-    else:
-        return
+    return result
+
 

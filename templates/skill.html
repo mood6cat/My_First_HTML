@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+</head>
+<body>
+{#<h1>Найдено со скиллом X: 2/h2>#}
+{#<p><a href="/candidate/<x>">Имя кандидата</a></p>#}
+{#<p><a href="/candidate/<x>">Имя кандидата</a></p>#}
+<h1>Найдено кандидатов с навыком {{ candidates.skills }}: {{ cnt_candidates }}</h1>
+{{ candidates.skills }}
+{% for candidate in candidates %}
+    <p><a href="/candidates/{{ candidate.id }}">{{candidate.name}}</a></p>
+{% endfor %}
+</body>
+</html>
